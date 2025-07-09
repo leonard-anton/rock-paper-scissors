@@ -47,9 +47,19 @@ function playRound(humanChoice, computerChoice) {
         console.log("You lose! Rock beats Scissors.")
         computerScore++;
     }
+    console.log("Current Score: Player - " + humanScore + " | " + "Computer - " + computerScore);
 }
 
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
+function playGame() {
+    while (humanScore < 5 && computerScore < 5) {
+        let humanSelection = getHumanChoice();
+        let computerSelection = getComputerChoice();
+        playRound(humanSelection, computerSelection);
+    }
 
-playRound(humanSelection, computerSelection);
+    if (humanScore === 5)
+        console.log("YOU WON THE GAME!")
+    else console.log("The Computer won... Try again?");
+}
+
+playGame();
