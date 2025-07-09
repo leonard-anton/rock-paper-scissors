@@ -10,3 +10,9 @@ function getComputerChoice() {
     if (randomNum === 2)
         return "scissors";
 }
+
+function getHumanChoice(){
+    let choice = prompt("Rock, Paper or Scissors?");
+
+    return choice.toLowerCase();
+}
